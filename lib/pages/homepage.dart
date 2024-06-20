@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:voyage/config/global.params.dart';
 import 'package:voyage/pages/drawer.dart';
-import 'package:voyage/pages/home_page_item.widget.dart';
-
 
 class HomePage extends StatelessWidget {
   final SharedPreferences prefs;
 
-  // Ajoutez SharedPreferences comme paramètre au constructeur de HomePage
   const HomePage({required this.prefs});
 
   @override
@@ -24,29 +20,95 @@ class HomePage extends StatelessWidget {
           spacing: 20,
           runSpacing: 20,
           children: [
-            HomePageItem(
-              imagePath: 'images/meteo.png',
-              onTap: () => Navigator.pushNamed(context, "/meteo"),
+            GestureDetector(
+              onTap: () => Navigator.pushNamed(context, '/meteo'),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/meteo.png',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  Text('Météo'),
+                ],
+              ),
             ),
-            HomePageItem(
-              imagePath: 'images/gallerie.png',
+            GestureDetector(
               onTap: () => Navigator.pushNamed(context, '/gallerie'),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/gallerie.png',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  Text('Gallerie'),
+                ],
+              ),
             ),
-            HomePageItem(
-              imagePath: 'images/pays.png',
+            GestureDetector(
               onTap: () => Navigator.pushNamed(context, '/pays'),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/pays.png',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  Text('Pays'),
+                ],
+              ),
             ),
-            HomePageItem(
-              imagePath: 'images/contact.png',
+            GestureDetector(
               onTap: () => Navigator.pushNamed(context, '/contact'),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/contact.png',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  Text('Contact'),
+                ],
+              ),
             ),
-            HomePageItem(
-              imagePath: 'images/parametres.png',
+            GestureDetector(
               onTap: () => Navigator.pushNamed(context, '/parametres'),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/parametres.png',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  Text('Paramètres'),
+                ],
+              ),
             ),
-            HomePageItem(
-              imagePath: 'images/Quit.png',
+            GestureDetector(
               onTap: () => deconnexion(context),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Image.asset(
+                    'assets/images/Quit.png',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
+                  Text('Déconnexion'),
+                ],
+              ),
             ),
           ],
         ),

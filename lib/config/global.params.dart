@@ -18,5 +18,6 @@ class GlobalParams {
     {"image": AssetImage('images/contact.png'), "route": "/contact"},
     {"image": AssetImage('images/parametres.png'), "route": "/parametres"},
     {"image": AssetImage('images/deconnexion.png'), "route": "/authentification"},
+    
   ];
 }
