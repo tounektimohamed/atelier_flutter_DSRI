@@ -18,7 +18,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   final SharedPreferences prefs; // Déclarer prefs comme variable de classe
 
-  MyApp({required this.prefs}); // Ajouter prefs comme paramètre de constructeur
+   MyApp({required this.prefs}); // Ajouter prefs comme paramètre de constructeur
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +26,14 @@ class MyApp extends StatelessWidget {
       title: 'Voyage',
       initialRoute: '/inscription',
       routes: {
-        '/connexion': (context) => LoginPage(),
-        '/inscription': (context) => InscriptionPage(),
+        '/connexion': (context) => const LoginPage(),
+        '/inscription': (context) => const InscriptionPage(),
         '/accueil': (context) => HomePage(prefs: prefs), // Passer les préférences partagées à HomePage
         '/meteo': (context) => MeteoPage(),
-        '/gallerie': (context) => GalleriePage(),
-        '/pays': (context) => PaysPage(),
-        '/contact': (context) => ContactPage(),
-        '/parametres': (context) => ParametresPage(),
+        '/gallerie': (context) => const GalleriePage(),
+        '/pays': (context) => const PaysPage(),
+        '/contact': (context) => const ContactPage(),
+        '/parametres': (context) => const ParametresPage(),
       },
     );
   }

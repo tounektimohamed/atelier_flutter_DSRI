@@ -4,7 +4,7 @@ class HomePageItem extends StatelessWidget {
   final String imagePath;
   final VoidCallback onTap;
 
-  const HomePageItem({
+  const HomePageItem({super.key, 
     required this.imagePath,
     required this.onTap,
   });

@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 class MeteoDetailsPage extends StatefulWidget {
   final String ville;
 
-  MeteoDetailsPage(this.ville);
+  const MeteoDetailsPage(this.ville, {super.key});
 
   @override
   State<MeteoDetailsPage> createState() => MeteoDetailsPageState();
@@ -40,7 +40,7 @@ class MeteoDetailsPageState extends State<MeteoDetailsPage> {
       appBar: AppBar(title: Text('Page Météo Détails ${widget.ville}')),
       body: Center(
         child: meteoData == null
-            ? CircularProgressIndicator()
+            ? const CircularProgressIndicator()
             : ListView.builder(
                 itemCount: meteoData['list'].length,
                 itemBuilder: (context, index) {

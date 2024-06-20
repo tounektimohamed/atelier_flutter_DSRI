@@ -3,6 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'homepage.dart'; // Assure-toi que le fichier homepage.dart est bien importé
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -17,10 +19,10 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Connexion'),
+        title: const Text('Connexion'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -28,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
             children: <Widget>[
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(labelText: 'Email'),
                 validator: (value) {
                   if (value == null || value.isEmpty || !value.contains('@')) {
                     return 'Email invalide';
@@ -38,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               TextFormField(
                 controller: _mdpController,
-                decoration: InputDecoration(labelText: 'Mot de passe'),
+                decoration: const InputDecoration(labelText: 'Mot de passe'),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -47,12 +49,12 @@ class _LoginPageState extends State<LoginPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: () {
                   _connexion(context);
                 },
-                child: Text('Se connecter'),
+                child: const Text('Se connecter'),
               ),
             ],
           ),
@@ -81,14 +83,14 @@ class _LoginPageState extends State<LoginPage> {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Erreur'),
-              content: Text('Veuillez remplir tous les champs et saisir un email valide.'),
+              title: const Text('Erreur'),
+              content: const Text('Veuillez remplir tous les champs et saisir un email valide.'),
               actions: [
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('OK'),
+                  child: const Text('OK'),
                 ),
               ],
             );

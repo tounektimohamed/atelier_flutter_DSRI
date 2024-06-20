@@ -4,28 +4,30 @@ import 'meteo_details_page.dart';
 class MeteoPage extends StatelessWidget {
   final TextEditingController txtVille = TextEditingController();
 
+  MeteoPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Page Météo')),
+      appBar: AppBar(title: const Text('Page Météo')),
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: TextFormField(
               controller: txtVille,
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.location_city),
+                prefixIcon: const Icon(Icons.location_city),
                 hintText: "Ville",
                 border: OutlineInputBorder(
-                  borderSide: BorderSide(width: 1),
+                  borderSide: const BorderSide(width: 1),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
             ),
           ),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 minimumSize: const Size.fromHeight(50),
@@ -33,7 +35,7 @@ class MeteoPage extends StatelessWidget {
               onPressed: () {
                 onGetMeteoDetails(context);
               },
-              child: Text('Chercher', style: TextStyle(fontSize: 22)),
+              child: const Text('Chercher', style: TextStyle(fontSize: 22)),
             ),
           ),
         ],

@@ -5,14 +5,14 @@ import 'package:voyage/pages/drawer.dart';
 class HomePage extends StatelessWidget {
   final SharedPreferences prefs;
 
-  const HomePage({required this.prefs});
+  const HomePage({super.key, required this.prefs});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: MyDrawer(prefs: prefs),
       appBar: AppBar(
-        title: Text('Page Home'),
+        title: const Text('Page Home'),
         backgroundColor: Colors.blue,
       ),
       body: Center(
@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     fit: BoxFit.cover,
                   ),
-                  Text('Météo'),
+                  const Text('Météo'),
                 ],
               ),
             ),
@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     fit: BoxFit.cover,
                   ),
-                  Text('Gallerie'),
+                  const Text('Gallerie'),
                 ],
               ),
             ),
@@ -61,7 +61,7 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     fit: BoxFit.cover,
                   ),
-                  Text('Pays'),
+                  const Text('Pays'),
                 ],
               ),
             ),
@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     fit: BoxFit.cover,
                   ),
-                  Text('Contact'),
+                  const Text('Contact'),
                 ],
               ),
             ),
@@ -91,7 +91,7 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     fit: BoxFit.cover,
                   ),
-                  Text('Paramètres'),
+                  const Text('Paramètres'),
                 ],
               ),
             ),
@@ -106,7 +106,7 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     fit: BoxFit.cover,
                   ),
-                  Text('Déconnexion'),
+                  const Text('Déconnexion'),
                 ],
               ),
             ),

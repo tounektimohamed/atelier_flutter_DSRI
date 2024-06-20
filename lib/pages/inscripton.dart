@@ -3,14 +3,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'homepage.dart'; 
 
 class InscriptionPage extends StatefulWidget {
+  const InscriptionPage({super.key});
+
   @override
   _InscriptionPageState createState() => _InscriptionPageState();
 }
 
 class _InscriptionPageState extends State<InscriptionPage> {
-  TextEditingController _nomController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _mdpController = TextEditingController();
+  final TextEditingController _nomController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _mdpController = TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -18,10 +20,10 @@ class _InscriptionPageState extends State<InscriptionPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Inscription'),
+        title: const Text('Inscription'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(20.0),
         child: Form(
           key: _formKey,
           child: Column(
@@ -29,7 +31,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
             children: <Widget>[
               TextFormField(
                 controller: _nomController,
-                decoration: InputDecoration(labelText: 'Nom'),
+                decoration: const InputDecoration(labelText: 'Nom'),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Nom invalide';
@@ -39,7 +41,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
               ),
               TextFormField(
                 controller: _emailController,
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(labelText: 'Email'),
                 validator: (value) {
                   if (value == null || value.isEmpty || !value.contains('@')) {
                     return 'Email invalide';
@@ -49,7 +51,7 @@ class _InscriptionPageState extends State<InscriptionPage> {
               ),
               TextFormField(
                 controller: _mdpController,
-                decoration: InputDecoration(labelText: 'Mot de passe'),
+                decoration: const InputDecoration(labelText: 'Mot de passe'),
                 obscureText: true,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -58,12 +60,12 @@ class _InscriptionPageState extends State<InscriptionPage> {
                   return null;
                 },
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: () {
                   _inscription(context);
                 },
-                child: Text('S\'inscrire'),
+                child: const Text('S\'inscrire'),
               ),
             ],
           ),
@@ -96,14 +98,14 @@ class _InscriptionPageState extends State<InscriptionPage> {
           context: context,
           builder: (BuildContext context) {
             return AlertDialog(
-              title: Text('Erreur'),
-              content: Text('Veuillez remplir tous les champs.'),
+              title: const Text('Erreur'),
+              content: const Text('Veuillez remplir tous les champs.'),
               actions: [
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text('OK'),
+                  child: const Text('OK'),
                 ),
               ],
             );
