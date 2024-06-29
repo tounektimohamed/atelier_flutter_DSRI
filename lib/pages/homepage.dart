@@ -118,6 +118,7 @@ class HomePage extends StatelessWidget {
 
   Future<void> deconnexion(BuildContext context) async {
     await prefs.setBool("connecte", false);
-    Navigator.pushNamedAndRemoveUntil(context, '/authentification', (route) => false);
+    Navigator.pushNamedAndRemoveUntil(
+        context, '/authentification', (route) => false);
   }
 }

@@ -5,7 +5,7 @@ import '../config/global.params.dart';
 class MyDrawer extends StatelessWidget {
   final SharedPreferences prefs;
 
-  MyDrawer({required this.prefs});
+  const MyDrawer({super.key, required this.prefs});
 
   @override
   Widget build(BuildContext context) {

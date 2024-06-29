@@ -10,15 +10,15 @@ import 'package:voyage/pages/homepage.dart';
 import 'package:voyage/pages/inscripton.dart';
 
 void main() async {
-  // Récupérer les préférences partagées
+  WidgetsFlutterBinding.ensureInitialized();
   SharedPreferences prefs = await SharedPreferences.getInstance();
-  runApp(MyApp(prefs: prefs)); // Passer les préférences partagées à MyApp
+  runApp(MyApp(prefs: prefs));
 }
 
 class MyApp extends StatelessWidget {
-  final SharedPreferences prefs; // Déclarer prefs comme variable de classe
+  final SharedPreferences prefs;
 
-   MyApp({required this.prefs}); // Ajouter prefs comme paramètre de constructeur
+  MyApp({required this.prefs});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/connexion': (context) => const LoginPage(),
         '/inscription': (context) => const InscriptionPage(),
-        '/accueil': (context) => HomePage(prefs: prefs), // Passer les préférences partagées à HomePage
+        '/accueil': (context) => HomePage(prefs: prefs),
         '/meteo': (context) => MeteoPage(),
-        '/gallerie': (context) => const GalleriePage(),
+        '/gallerie': (context) => GalleriePage(prefs: prefs), // Pass prefs here
         '/pays': (context) => const PaysPage(),
         '/contact': (context) => const ContactPage(),
         '/parametres': (context) => const ParametresPage(),
